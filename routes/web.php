@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'Web\WebController@index')->name('home.index');
+Route::prefix('maps/')->group(function () {
+    Route::get('index', 'Web\MapsController@index')->name('maps.index');
 });
+Route::get('/profile', 'Web\ProfileController@index')->name('profile.index');
