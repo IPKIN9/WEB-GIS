@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
+
     public function index()
     {
         $date = Carbon::now()->toDateString();
