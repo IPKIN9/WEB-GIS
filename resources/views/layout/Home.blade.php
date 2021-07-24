@@ -64,7 +64,52 @@
                     <hr class="my-3">
                     <!-- Heading -->
                     <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Detail Information</span>
+                        <span class="docs-normal">Data Terbaru</span>
+                        <h3 class="mt-2">Lakalintas</h3>
+                        <div class="table-responsive mt-2">
+                            <!-- Projects table -->
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Jalan</th>
+                                        <th scope="col">Korban</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($special['all_laka'] as $d)
+                                    <tr>
+                                        <th scope="row">
+                                            {{$d->jalan_rol->nama_jalan}}
+                                        </th>
+                                        <td>
+                                            {{$d->jumlah_korban}}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <h3 class="mt-2">Kriminalitas</h3>
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Kelurahan</th>
+                                        <th scope="col">Kasus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($special['all_kriminal'] as $d)
+                                    <tr>
+                                        <th scope="row">
+                                            {{$d->tkp_rol->kelurahan}}
+                                        </th>
+                                        <td>
+                                            {{$d->jumlah}}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </h6>
                 </div>
             </div>
@@ -81,9 +126,6 @@
                             © 2021 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
                                 target="_blank">Masso-Gis Team</a>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-
                     </div>
                 </div>
             </footer>
